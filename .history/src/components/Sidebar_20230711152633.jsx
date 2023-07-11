@@ -70,9 +70,9 @@ const Sidebar = () => {
                       isActive ? activeLink : normalLink
                     }
                   >
+                    
                     <div className="capitalize d-flex align-items-center ">
-                      <span>{link.icon}</span><span className="ms-2">{link.name}</span>
-                    </div>
+                      <span>{link.icon}</span>{link.name}</div>
                   </NavLink>
                 ))}
               </div>

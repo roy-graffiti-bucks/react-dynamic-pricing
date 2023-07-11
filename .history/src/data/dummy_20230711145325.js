@@ -22,8 +22,8 @@ export const links = [
       },
 
       {
-        name: 'SKU ManagementV2',
-        link: 'sku-managementV2',
+        name: 'SKU Management',
+        link: 'sku-management',
         icon: <FiShoppingBag />,
       },
     ],

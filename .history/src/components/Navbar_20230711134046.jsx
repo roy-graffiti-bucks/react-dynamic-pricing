@@ -60,7 +60,7 @@ const Navbar = () => {
 
   return (
     <div 
-      className="flex justify-between w-100 p-2 md:ml-6 md:mr-6 relative "
+      className="flex justify-between w-100 p-2 md:ml-6 md:mr-6 relative bg-danger "
  
     
     >

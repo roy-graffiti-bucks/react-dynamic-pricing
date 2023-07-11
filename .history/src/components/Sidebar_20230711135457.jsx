@@ -7,8 +7,6 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { links } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
-
-
 const Sidebar = () => {
   const { currentColor, activeMenu, setActiveMenu, screenSize } =
     useStateContext();
@@ -30,7 +28,7 @@ const Sidebar = () => {
         <>
           <div className="flex justify-between items-center">
             <Link
-              to="/sku-management"
+              to="/"
               onClick={handleCloseSideBar}
               className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
             >
@@ -47,7 +45,14 @@ const Sidebar = () => {
                 <MdOutlineCancel />
               </button>
 
-              
+              <button
+                type="button"
+                onClick={() => setActiveMenu(!activeMenu)}
+                style={{ color: currentColor }}
+                className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
+              >
+                <MdOutlineCancel />
+              </button>
             </TooltipComponent>
           </div>
           <div className="mt-10 ">
@@ -63,16 +68,13 @@ const Sidebar = () => {
                     onClick={handleCloseSideBar}
                     style={({ isActive }) => ({
                       backgroundColor: isActive ? currentColor : "",
-                      display: "flex", 
-                      justifyContent: "start"
                     })}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
                   >
-                    <div className="capitalize d-flex align-items-center ">
-                      <span>{link.icon}</span><span className="ms-2">{link.name}</span>
-                    </div>
+                    {link.icon}
+                    <span className="capitalize ">{link.name}</span>
                   </NavLink>
                 ))}
               </div>

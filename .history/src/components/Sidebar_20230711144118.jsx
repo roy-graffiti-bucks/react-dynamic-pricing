@@ -63,16 +63,13 @@ const Sidebar = () => {
                     onClick={handleCloseSideBar}
                     style={({ isActive }) => ({
                       backgroundColor: isActive ? currentColor : "",
-                      display: "flex", 
-                      justifyContent: "start"
                     })}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
                   >
-                    <div className="capitalize d-flex align-items-center ">
-                      <span>{link.icon}</span><span className="ms-2">{link.name}</span>
-                    </div>
+                    {link.icon}
+                    <span className="capitalize ">{link.name}</span>
                   </NavLink>
                 ))}
               </div>

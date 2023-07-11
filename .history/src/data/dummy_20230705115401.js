@@ -20,12 +20,6 @@ export const links = [
         link: 'sku-management',
         icon: <FiShoppingBag />,
       },
-
-      {
-        name: 'SKU ManagementV2',
-        link: 'sku-managementV2',
-        icon: <FiShoppingBag />,
-      },
     ],
   },
 ];

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, div } from "react-router-dom";
 import { SiShopware } from "react-icons/si";
 import { MdOutlineCancel } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
@@ -38,14 +38,14 @@ const Sidebar = () => {
             </Link>
 
             <TooltipComponent content="Menu" position="BottomCenter">
-              <button
-                type="button"
+              <div
+                type="div"
                 onClick={() => setActiveMenu(!activeMenu)}
                 style={{ color: currentColor }}
                 className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
               >
                 <MdOutlineCancel />
-              </button>
+              </div>
 
               
             </TooltipComponent>
@@ -57,23 +57,20 @@ const Sidebar = () => {
                   {item.title}
                 </p>
                 {item.links.map((link) => (
-                  <NavLink
+                  <div
                     to={`${link.link}`}
                     key={link.name}
                     onClick={handleCloseSideBar}
                     style={({ isActive }) => ({
                       backgroundColor: isActive ? currentColor : "",
-                      display: "flex", 
-                      justifyContent: "start"
                     })}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
                   >
-                    <div className="capitalize d-flex align-items-center ">
-                      <span>{link.icon}</span><span className="ms-2">{link.name}</span>
-                    </div>
-                  </NavLink>
+                    {link.icon}
+                    <span className="capitalize ">{link.name}</span>
+                  </div>
                 ))}
               </div>
             ))}
